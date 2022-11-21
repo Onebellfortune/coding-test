@@ -43,19 +43,32 @@ int main()
     set<string> S;
     string str;
     cin>>str;
+    //scanf("%s",str);
     char small;
     char big;
-    N=str.length();
+    //N=str.length();
     int inc=1;
-
+    int N=str.length();
+    string answer="";
+    answer+=str[0];
+    
     for(int i=1;i<N;i++){
-        if(str[i-1]<str[i]){
-            reverse(str,i);
-            reverse(str,i+1);
+        if(answer[0]>=str[i]){
+            
+            answer=str[i]+answer;
+        }else{
+            answer=answer+str[i];
         }
     }
-    //cout<<str<<"\n";
-    reverse(str,N);
+    cout<<answer<<"\n";
+    // for(int i=1;i<N;i++){
+    //     if(str[i-1]<str[i]){
+    //         reverse(str,i);
+    //         reverse(str,i+1);
+    //     }
+    // }
+    // //cout<<str<<"\n";
+    // reverse(str,N);
     
-    cout<<str<<"\n";
+    // cout<<str<<"\n";
 }
